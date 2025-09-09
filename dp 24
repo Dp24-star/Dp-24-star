@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dp-24-star GitHub Repository</title>
+</head>
+<body>
+  <h1>Dp-24-star Repository</h1>
+  <p>Click below to visit the GitHub repo:</p>
+  <a href="https://github.com/Dp24-star/Dp-24-star" target="_blank">
+    <img src="https://img.shields.io/badge/View%20on-GitHub-blue?logo=github" alt="GitHub Badge">
+  </a>
+</body>
+</html> 
