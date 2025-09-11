@@ -1,0 +1,22 @@
+{
+  "project": {
+    "title": "Dp-24-star",
+    "description": "Dp-24-star is an open-source project aimed at building advanced data processing and analysis tools."
+  },
+  "links": [
+    {
+      "name": "GitHub Repository",
+      "url": "https://github.com/Dp24-star/Dp-24-star"
+    },
+    {
+      "name": "Report Issues",
+      "url": "https://github.com/Dp24-star/Dp-24-star/issues"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Project Logo",
+      "src": "https://raw.githubusercontent.com/Dp24-star/Dp-24-star/main/logo.png"
+    }
+  ]
+}
