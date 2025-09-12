@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Website Buttons</title>
+  <title>Dynamic Website Buttons</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 50px;
       background-color: #f4f4f4;
+      padding: 50px;
     }
 
     .button-container {
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .site-button {
@@ -29,6 +30,7 @@
       text-decoration: none;
       color: black;
       font-weight: bold;
+      min-width: 200px;
     }
 
     .site-button img {
@@ -45,23 +47,32 @@
 <body>
 
   <h2>Visit These Websites</h2>
+  <div class="button-container" id="buttons"></div>
 
-  <div class="button-container">
-    <a class="site-button" href="https://www.halowaypoint.com/" target="_blank">
-      <img src="https://content.halocdn.com/media/Default/brand/halo-icon-60x60-17f90b43f8644b84b2ed1aa5c556ad58.png" alt="Halo Waypoint">
-      Halo Waypoint
-    </a>
+  <script>
+    // Load JSON data
+    fetch('websites.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('buttons');
 
-    <a class="site-button" href="https://www.youtube.com/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" style="width: 30px;">
-      YouTube
-    </a>
+        data.forEach(site => {
+          const a = document.createElement('a');
+          a.href = site.url;
+          a.className = 'site-button';
+          a.target = '_blank';
 
-    <a class="site-button" href="https://www.pinterest.com/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest" style="width: 24px;">
-      Pinterest
-    </a>
-  </div>
+          const img = document.createElement('img');
+          img.src = site.logo;
+          img.alt = site.name;
+
+          a.appendChild(img);
+          a.appendChild(document.createTextNode(site.name));
+          container.appendChild(a);
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+  </script>
 
 </body>
 </html>
