@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Halo Waypoint",
+    "url": "https://www.halowaypoint.com/",
+    "logo": "https://content.halocdn.com/media/Default/brand/halo-icon-60x60-17f90b43f8644b84b2ed1aa5c556ad58.png"
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+  },
+  {
+    "name": "Pinterest",
+    "url": "https://www.pinterest.com/",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+  }
+]
