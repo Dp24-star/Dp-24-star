@@ -1,138 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loading...</title>
+  <meta charset="UTF-8">
+  <title>Website Buttons</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #121212;
-      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f4f4f4;
+    }
+
+    .button-container {
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      gap: 20px;
     }
-    header {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      color: #0af;
-    }
-    main {
-      flex-grow: 1;
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #0af;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    pre {
-      background: #222;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-size: 1rem;
-    }
-    footer {
-      background-color: #1e1e1e;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-    }
-    a {
-      color: #0af;
+
+    .site-button {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
       text-decoration: none;
+      color: black;
+      font-weight: bold;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .site-button img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
     }
-    img.logo {
-      max-width: 150px;
-      margin: 1rem auto;
-      display: block;
+
+    .site-button:hover {
+      background-color: #e0e0e0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1 id="project-title">Loading...</h1>
-    <p id="project-desc"></p>
-    <img id="project-logo" class="logo" alt="" src="" style="display:none" />
-  </header>
-  <main>
-    <section>
-      <h2>Get Started</h2>
-      <p>To get started with Dp-24-star, clone the repository using the following command:</p>
-      <pre><code>git clone https://github.com/Dp24-star/Dp-24-star.git</code></pre>
-      <p>Explore the codebase, contribute, and join the community!</p>
-    </section>
-    <section>
-      <h2>Links</h2>
-      <ul id="links-list"></ul>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Dp-24-star | Built with passion for open source
-  </footer>
 
-  <script>
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        // Set project title and description
-        document.title = data.project.title || 'Dp-24-star';
-        document.getElementById('project-title').textContent = data.project.title || '';
-        document.getElementById('project-desc').textContent = data.project.description || '';
+  <h2>Visit These Websites</h2>
 
-        // Set logo image if exists
-        if (data.images && data.images.length > 0) {
-          const logo = data.images[0];
-          const imgElem = document.getElementById('project-logo');
-          imgElem.src = logo.src;
-          imgElem.alt = logo.alt || 'Project Logo';
-          imgElem.style.display = 'block';
-        }
+  <div class="button-container">
+    <a class="site-button" href="https://www.halowaypoint.com/" target="_blank">
+      <img src="https://content.halocdn.com/media/Default/brand/halo-icon-60x60-17f90b43f8644b84b2ed1aa5c556ad58.png" alt="Halo Waypoint">
+      Halo Waypoint
+    </a>
 
-        // Populate links
-        const linksList = document.getElementById('links-list');
-        linksList.innerHTML = ''; // clear if any content
+    <a class="site-button" href="https://www.youtube.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" style="width: 30px;">
+      YouTube
+    </a>
 
-        if (data.links && data.links.length > 0) {
-          data.links.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.textContent = link.name;
-            li.appendChild(a);
-            linksList.appendChild(li);
-          });
-        } else {
-          linksList.innerHTML = '<li>No links available.</li>';
-        }
-      })
-      .catch(error => {
-        console.error('Error loading data.json:', error);
-        document.getElementById('project-title').textContent = 'Dp-24-star';
-        document.getElementById('project-desc').textContent = 'Failed to load project data.';
-      });
-  </script>
+    <a class="site-button" href="https://www.pinterest.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest" style="width: 24px;">
+      Pinterest
+    </a>
+  </div>
+
 </body>
 </html>
